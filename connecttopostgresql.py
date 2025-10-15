@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-import psycopg2
+import psycopg
 import os
 
 app = FastAPI()
@@ -14,7 +14,7 @@ def query(q: str):
     db_pass = os.getenv("DB_PASS")
 
     # Connect to PostgreSQL
-    conn = psycopg2.connect(
+    conn = psycopg.connect(
         host=db_host,
         port=db_port,
         dbname=db_name,
